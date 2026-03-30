@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大不列顛帝國 | GREAT BRITAIN EMPIRE - 頂級時尚精品</title>
+    <!-- 引入 Google Fonts: Exo 2 (標題) & Noto Sans TC (內文) -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f172a',
+                        secondary1: '#d4a373',
+                        secondary2: '#d6d6d6',
+                    },
+                    fontFamily: {
+                        title: ['"Exo 2"', 'sans-serif'],
+                        body: ['"Noto Sans TC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 全域強制直角規範 */
+        * {
+            border-radius: 0 !important;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #ffffff;
+            color: #0f172a;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Exo 2', sans-serif;
+            letter-spacing: 0.1em;
+        }
+
+        /* 英雄區微光粒子動畫 */
+        .particle-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(212, 163, 115, 0.6);
+            width: 2px;
+            height: 2px;
+            opacity: 0;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translateY(-10vh) translateX(100px); opacity: 0; }
+        }
+
+        /* 滾動平滑 */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 產品圖片懸停效果 */
+        .product-card img {
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* 自定義捲軸 */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0f172a;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- 導航列 -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-primary/5 px-6 py-4 flex justify-between items-center">
+        <div class="text-2xl font-bold brand-font text-primary">
+            GREAT BRITAIN <span class="text-secondary1 font-light">EMPIRE</span>
+        </div>
+        <div class="hidden md:flex space-x-10 text-sm tracking-widest uppercase">
+            <a href="#mission" class="hover:text-secondary1 transition-colors">Brand</a>
+            <a href="#products" class="hover:text-secondary1 transition-colors">Collections</a>
+            <a href="#trust" class="hover:text-secondary1 transition-colors">Privilege</a>
+            <a href="#" class="hover:text-secondary1 transition-colors">Store</a>
+        </div>
+        <button class="border border-primary px-6 py-2 text-xs uppercase tracking-tighter hover:bg-primary hover:text-white transition-all">
+            Menu
+        </button>
+    </nav>
+
+    <!-- 首屏英雄區 (Hero Section) -->
+    <section class="relative h-screen flex items-center justify-center bg-primary overflow-hidden">
+        <!-- 微光粒子容器 -->
+        <div id="particles" class="particle-container"></div>
+
+        <!-- 背景圖 (使用 Unsplash 高端時尚感) -->
+        <div class="absolute inset-0 opacity-40">
+            <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=2070&auto=format&fit=crop" alt="Luxury Background" class="w-full h-full object-cover">
+        </div>
+
+        <!-- 內容區 -->
+        <div class="relative z-10 text-center text-white px-4">
+            <p class="brand-font text-secondary1 tracking-[0.5em] mb-6 animate-pulse">EST. 2024</p>
+            <h1 class="text-5xl md:text-8xl font-light mb-4 leading-tight">
+                沒有你想得到
+            </h1>
+            <h2 class="text-2xl md:text-4xl font-light tracking-[0.3em] mb-12 text-secondary2">
+                只有你能得到
+            </h2>
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <a href="#booking" class="bg-secondary1 text-primary font-bold px-12 py-5 text-sm uppercase tracking-widest hover:bg-white transition-all duration-500">
+                    立即開始預約
+                </a>
+            </div>
+        </div>
+
+        <!-- 裝飾側邊文字 -->
+        <div class="absolute bottom-10 left-10 hidden lg:block text-secondary1/30 brand-font vertical-text rotate-180 text-xs tracking-widest" style="writing-mode: vertical-rl;">
+            THE ULTIMATE LUXURY EXPERIENCE
+        </div>
+    </section>
+
+    <!-- 品牌使命 (Mission) -->
+    <section id="mission" class="py-32 px-6 md:px-20 bg-white">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop" alt="Mission" class="w-full grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl">
+                <div class="absolute -bottom-10 -right-10 w-64 h-64 border-2 border-secondary1 -z-10 hidden md:block"></div>
+            </div>
+            <div class="space-y-8">
+                <h3 class="text-secondary1 text-sm tracking-widest uppercase">Our Philosophy</h3>
+                <h2 class="text-4xl md:text-5xl leading-tight font-medium">大不列顛帝國：<br>重新定義奢華邊界</h2>
+                <p class="text-gray-500 leading-relaxed text-lg">
+                    我們相信時尚不只是穿戴，而是一種權力與自我的表達。在大不列顛帝國，每一件單品都是經過極端挑選與工藝淬煉的藝術品。我們不追求大眾的認同，只服務於那些懂得「稀有」價值的靈魂。
+                </p>
+                <div class="pt-6">
+                    <a href="#" class="inline-block border-b border-primary pb-2 text-sm font-bold tracking-widest hover:text-secondary1 hover:border-secondary1 transition-all">探索品牌故事 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 精選服務/產品 (Products) -->
+    <section id="products" class="py-24 bg-[#f8f9fa]">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h3 class="text-secondary1 text-sm tracking-widest uppercase mb-2">Exclusive Selection</h3>
+                    <h2 class="text-4xl font-medium">本季限定收藏</h2>
+                </div>
+                <div class="text-primary/60 max-w-sm text-sm italic">
+                    "穿上它，你就擁有了全世界的目光。"
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-0.5 bg-secondary2">
+                <!-- 產品卡片 1 -->
+                <div class="product-card bg-white p-10 group cursor-pointer relative overflow-hidden">
+                    <div class="aspect-[3/4] overflow-hidden mb-8">
+                        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1974&auto=format&fit=crop" alt="Collection 1" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h4 class="text-lg font-medium mb-1">帝國黑金西服</h4>
+                            <p class="text-secondary1 text-sm">Empirical Black Suit</p>
+                        </div>
+                        <span class="text-xl font-light">NT$ 88,000</span>
+                    </div>
+                </div>
+
+                <!-- 產品卡片 2 -->
+                <div class="product-card bg-white p-10 group cursor-pointer relative overflow-hidden">
+                    <div class="aspect-[3/4] overflow-hidden mb-8">
+                        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=2080&auto=format&fit=crop" alt="Collection 2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h4 class="text-lg font-medium mb-1">絲路晨光大衣</h4>
+                            <p class="text-secondary1 text-sm">Silk Road Morning Coat</p>
+                        </div>
+                        <span class="text-xl font-light">NT$ 125,000</span>
+                    </div>
+                </div>
+
+                <!-- 產品卡片 3 -->
+                <div class="product-card bg-white p-10 group cursor-pointer relative overflow-hidden">
+                    <div class="aspect-[3/4] overflow-hidden mb-8">
+                        <img src="https://images.unsplash.com/photo-1485230895905-ec17bd36858f?q=80&w=2070&auto=format&fit=crop" alt="Collection 3" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h4 class="text-lg font-medium mb-1">倫敦霧影洋裝</h4>
+                            <p class="text-secondary1 text-sm">London Mist Gown</p>
+                        </div>
+                        <span class="text-xl font-light">NT$ 62,000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用戶信任感區塊 (Trust) -->
+    <section id="trust" class="py-32 bg-primary text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="mb-12">
+                <svg class="w-12 h-12 mx-auto text-secondary1 fill-current" viewBox="0 0 24 24">
+                    <path d="M14.017 21L14.017 18C14.017 16.8954 13.1216 16 12.017 16H9.01703V14H12.017C14.2261 14 16.017 12.2091 16.017 10V7C16.017 5.89543 15.1216 5 14.017 5H7.01703C5.91246 5 5.01703 5.89543 5.01703 7V17C5.01703 19.2091 6.80789 21 9.01703 21H14.017ZM19.017 21V18C19.017 16.8954 18.1216 16 17.017 16H16.017V14H17.017C19.2261 14 21.017 12.2091 21.017 10V7C21.017 5.89543 20.1216 5 19.017 5H18.017V21H19.017Z" />
+                </svg>
+            </div>
+            <h2 class="text-3xl md:text-4xl italic font-light leading-relaxed mb-10">
+                「大不列顛帝國不僅僅提供了衣服，他們提供了一種讓我在任何場合都能感到絕對自信的盔甲。這是我見過最完美的直角剪裁。」
+            </h2>
+            <div class="space-y-2">
+                <p class="text-secondary1 font-bold tracking-widest">— ALBERT CHEN</p>
+                <p class="text-secondary2 text-sm uppercase">Global Creative Director</p>
+            </div>
+
+            <!-- 數字指標 -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24">
+                <div class="border-l border-white/20 pl-6 text-left">
+                    <div class="text-3xl brand-font text-secondary1 mb-2">120+</div>
+                    <div class="text-xs text-secondary2 uppercase tracking-widest">Global Stores</div>
+                </div>
+                <div class="border-l border-white/20 pl-6 text-left">
+                    <div class="text-3xl brand-font text-secondary1 mb-2">50k+</div>
+                    <div class="text-xs text-secondary2 uppercase tracking-widest">Elite Members</div>
+                </div>
+                <div class="border-l border-white/20 pl-6 text-left">
+                    <div class="text-3xl brand-font text-secondary1 mb-2">15</div>
+                    <div class="text-xs text-secondary2 uppercase tracking-widest">Design Awards</div>
+                </div>
+                <div class="border-l border-white/20 pl-6 text-left">
+                    <div class="text-3xl brand-font text-secondary1 mb-2">100%</div>
+                    <div class="text-xs text-secondary2 uppercase tracking-widest">Handmade Quality</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 預約區塊 -->
+    <section id="booking" class="py-32 bg-white flex flex-col items-center">
+        <div class="max-w-2xl w-full px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-medium mb-4">預約您的私人試衣</h2>
+                <p class="text-gray-500">留下您的資訊，我們的專屬時尚顧問將在 24 小時內與您聯繫。</p>
+            </div>
+            <form class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" placeholder="您的姓名" class="w-full border-b border-gray-300 py-4 focus:outline-none focus:border-secondary1 transition-colors text-sm">
+                    <input type="email" placeholder="聯絡電子郵件" class="w-full border-b border-gray-300 py-4 focus:outline-none focus:border-secondary1 transition-colors text-sm">
+                </div>
+                <input type="tel" placeholder="聯絡電話" class="w-full border-b border-gray-300 py-4 focus:outline-none focus:border-secondary1 transition-colors text-sm">
+                <textarea rows="4" placeholder="感興趣的系列或特殊需求" class="w-full border-b border-gray-300 py-4 focus:outline-none focus:border-secondary1 transition-colors text-sm resize-none"></textarea>
+                <button type="button" class="w-full bg-primary text-white py-5 font-bold tracking-widest hover:bg-secondary1 transition-all">
+                    提交預約申請
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 頁尾 (Footer) -->
+    <footer class="bg-[#0a0f1a] text-white pt-24 pb-12 px-6">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+            <div class="col-span-1 md:col-span-2 space-y-8">
+                <div class="text-3xl font-bold brand-font">
+                    GREAT BRITAIN <span class="text-secondary1">EMPIRE</span>
+                </div>
+                <p class="text-secondary2/60 max-w-md leading-relaxed">
+                    致力於為全球精英提供極致的時尚解決方案。從倫敦到巴黎，從紐約到台北，大不列顛帝國始終是品味與地位的象徵。
+                </p>
+                <!-- 模擬地圖區塊 -->
+                <div class="w-full h-48 bg-gray-800 relative grayscale contrast-125">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <span class="text-xs tracking-[0.4em] uppercase opacity-50">London Flagship Store Map</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="space-y-6">
+                <h4 class="text-secondary1 text-sm tracking-widest uppercase">Quick Links</h4>
+                <ul class="space-y-4 text-sm text-secondary2/80">
+                    <li><a href="#" class="hover:text-white transition-colors">隱私權政策</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">服務條款</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">運送與退換貨</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">常見問題</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-6">
+                <h4 class="text-secondary1 text-sm tracking-widest uppercase">Connect</h4>
+                <ul class="space-y-4 text-sm text-secondary2/80">
+                    <li><a href="#" class="hover:text-white transition-colors">Instagram</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Facebook</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">LinkedIn</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">YouTube</a></li>
+                </ul>
+                <div class="pt-6">
+                    <p class="text-xs text-secondary1">CUSTOMER SERVICE</p>
+                    <p class="text-lg">+886 02 2777 0000</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-[10px] text-secondary2/40 tracking-widest uppercase">
+                &copy; 2024 GREAT BRITAIN EMPIRE. ALL RIGHTS RESERVED.
+            </p>
+            <div class="flex space-x-6">
+                <div class="w-8 h-8 border border-white/10 flex items-center justify-center hover:border-secondary1 transition-colors cursor-pointer">
+                    <span class="text-[10px]">FB</span>
+                </div>
+                <div class="w-8 h-8 border border-white/10 flex items-center justify-center hover:border-secondary1 transition-colors cursor-pointer">
+                    <span class="text-[10px]">IG</span>
+                </div>
+                <div class="w-8 h-8 border border-white/10 flex items-center justify-center hover:border-secondary1 transition-colors cursor-pointer">
+                    <span class="text-[10px]">X</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 初始化粒子動畫腳本 -->
+    <script>
+        const particleCount = 40;
+        const container = document.getElementById('particles');
+
+        function createParticles() {
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // 隨機初始位置與延遲
+                const left = Math.random() * 100 + 'vw';
+                const delay = Math.random() * 15 + 's';
+                const duration = (Math.random() * 10 + 10) + 's';
+                const size = (Math.random() * 3 + 1) + 'px';
+
+                particle.style.left = left;
+                particle.style.animationDelay = delay;
+                particle.style.animationDuration = duration;
+                particle.style.width = size;
+                particle.style.height = size;
+
+                container.appendChild(particle);
+            }
+        }
+
+        window.onload = createParticles;
+    </script>
+</body>
+</html>
